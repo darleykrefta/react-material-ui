@@ -1,9 +1,9 @@
 import http from './http'
 
-const URL = `/api/employee/`
+const URL = `api/employee`
 
-export function getEmployees({ id }) {
-  return http.get(`${URL}/${id}`)
+export function getEmployees() {
+  return http.get(`${URL}/all`)
 }
 
 export function getEmployeeById({ id }) {
