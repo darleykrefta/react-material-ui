@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const EmployeeHeader = ({ handleAdd }) => {
+const Header = ({ onAction, textAction, title }) => {
   const classes = useStyles()
 
   return (
@@ -24,11 +24,11 @@ const EmployeeHeader = ({ handleAdd }) => {
       <CardContent>
         <Grid container direction="row" justify="space-between" alignItems="center">
           <Typography variant="h5" component="h2">
-            employee
+            {title}
           </Typography>
-          <Button variant="contained" color="primary" className={classes.button} onClick={() => handleAdd()}>
+          <Button variant="contained" color="primary" className={classes.button} onClick={() => onAction()}>
             <AddIcon />
-            add
+            {textAction}
           </Button>
         </Grid>
       </CardContent>
@@ -36,4 +36,4 @@ const EmployeeHeader = ({ handleAdd }) => {
   )
 }
 
-export default EmployeeHeader
+export default Header
